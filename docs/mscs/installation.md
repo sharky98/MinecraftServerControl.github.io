@@ -20,7 +20,7 @@ permalink: /docs/mscs/installation
 
 We've made an attempt to utilize only features that are normally installed in most Linux and UNIX environments in this script. However, there may be a few requirements that this script has that may not already be in place:
   
-- Java JRE - The Minecraft server software requires this. **As of Minecraft version 1.18, Java 17 is required as the minimum java version.**<br>
+- Java JRE - The Minecraft server software requires this. **As of Minecraft version 1.20.5, Java 21 is required as the minimum java version.**<br>
 - Perl - Most, if not all, Unix and Linux like systems have this preinstalled.<br>
 - libjson-perl - Allows the script to read JSON formatted data.<br>
 - libwww-perl - Allows the script to download data to verify downloads.<br>
@@ -42,15 +42,15 @@ If you are running Debian or Ubuntu, you can make sure that the dependencies are
 sudo apt-get install default-jre perl libjson-perl libwww-perl liblwp-protocol-https-perl util-linux python make wget git rdiff-backup rsync socat iptables
 ```
 
-**Note**: the version of Java that is shipped in the `default-jre` package, which is the official Debian / Ubuntu Java package, varies based on which version of Debian or Ubuntu you have installed on your system. In some cases (depending on what OS you're running), the version of Java that is shipped with the `default-jre` package is less than Java 17, which is required for Minecraft 1.18+. You can test to see if the version of Debian or Ubuntu you have has an official Java 17 package repo by trying: `sudo apt-get install openjdk-17-jre`. If this fails, and you want to play Minecraft versions 1.18+, you will either have to download Java 17 manually or add it from an unofficial, third party package repository.
+**Note**: the version of Java that is shipped in the `default-jre` package, which is the official Debian / Ubuntu Java package, varies based on which version of Debian or Ubuntu you have installed on your system. In some cases (depending on what OS you're running), the version of Java that is shipped with the `default-jre` package is less than Java 21, which is required for Minecraft 1.20.5+. You can test to see if the version of Debian or Ubuntu you have has an official Java 21 package repo by trying: `sudo apt-get install openjdk-21-jre`. If this fails, and you want to play Minecraft versions 1.20.5+, you will either have to download Java 21 manually or add it from an unofficial, third party package repository. Java is backwards compatible, that means that you can use Java 21 for Minecraft 1.8 even if Mojang doesn't state that it is compatible with Java 21
 
 ### Fedora, Redhat, or CentOS
 If you are running Fedora, Redhat, or CentOS, you can make sure that the dependencies are installed by running the following command:
 
 ```bash
-sudo dnf install java-17-openjdk perl perl-JSON perl-libwww-perl perl-LWP-Protocol-https util-linux python3 make wget git rdiff-backup rsync socat iptables sudo procps which
+sudo dnf install java-21-openjdk perl perl-JSON perl-libwww-perl perl-LWP-Protocol-https util-linux python3 make wget git rdiff-backup rsync socat iptables sudo procps which
 ```
-**Note:** Minecraft 1.18+ requires Java 17 or higher.
+**Note:** Minecraft 1.18-1.20.4 requires Java 17 or higher. Minecraft 1.20.5+ requires Java 21 or higher
 
 **Additional Note:** if you are running Redhat Enterprise Linux, you must install and enable the EPEL repository in order to install some of the required packages. You can do so with the following commands (assuming you are running RHEL 8):
 ```bash
